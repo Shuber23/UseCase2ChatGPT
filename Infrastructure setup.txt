@@ -1,1 +1,43 @@
+User
+I want to create new ASP.Net Core project with React and Rest Api using .NET CLI. Could you provide me details, how to do this with appropriate command
+ChatGPT
 
+Creating a new ASP.NET Core project with React and a REST API can be done through the .NET CLI with the following steps:
+
+Step 1: Install .NET Core SDK
+
+Before starting, make sure you have the .NET Core SDK installed. You can download the SDK from Microsoft's official .NET site. You can confirm the installation by opening a terminal window and running the following command:
+
+bash
+
+dotnet --version
+
+Step 2: Create a new project
+
+Create a new project using the "aspnetcore-react" template, which includes a setup for React and ASP.NET Core:
+
+bash
+
+dotnet new react -o MyReactApp
+
+This command creates a new React and ASP.NET Core application and outputs the result to a new directory named MyReactApp.
+
+Step 3: Navigate to the project directory:
+
+bash
+
+cd MyReactApp
+
+Step 4: Run the application:
+
+bash
+
+dotnet run
+
+After running this command, you should be able to browse to https://localhost:5001 in your web browser to view the application.
+
+The API will be available under https://localhost:5001/api. However, at this point, there won't be any controllers. You need to add the API controllers for your REST API manually.
+
+For example, to add a new controller for a Products resource, you would create a new file under the Controllers directory named ProductsController.cs, and within that file, you would define your RESTful resource methods (like GET, POST, PUT, DELETE).
+
+Please note that, as of my knowledge cutoff in September 2021, you need to handle CORS issues when you call the API from the React client. You should register and configure the CORS middleware services in the Startup.cs file, which is a standard procedure in ASP.NET Core projects. If the details have changed after this time, please refer to the latest official ASP.NET Core and React documentation.
